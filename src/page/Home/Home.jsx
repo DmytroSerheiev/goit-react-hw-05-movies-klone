@@ -1,6 +1,6 @@
-import { Link } from './Home.styled';
 import { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'service/Api';
+import { MovieList } from 'components/MovieList/MovieList';
 
 export const Home = () => {
   const [trandMovie, setTrandMovie] = useState([]);
@@ -13,13 +13,7 @@ export const Home = () => {
   return (
     <div>
       <h1>Trending movie</h1>
-      <ul>
-        {trandMovie.map(movie => (
-          <li key={movie.id}>
-            <Link to={`movie/${movie.id}`}>{movie.title}</Link>
-          </li>
-        ))}
-      </ul>
+      <MovieList collection={trandMovie} />
     </div>
   );
 };

@@ -1,5 +1,4 @@
 import { Container, Header, Link } from './Appbar.styled';
-import { Outlet } from 'react-router-dom';
 
 export const Appbar = () => {
   return (
@@ -12,7 +11,6 @@ export const Appbar = () => {
           <Link to="movie">Movie</Link>
         </nav>
       </Header>
-      <Outlet />
     </Container>
   );
 };

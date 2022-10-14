@@ -16,7 +16,7 @@ export const getTrendingMovies = async (page = 1) => {
 };
 export const getSearchMovies = async (searchQuery, page = 1) => {
   try {
-    const url = `3/search/movie?${userKey}&language=en-US&query=${searchQuery}&page=${page}&include_adult=false`;
+    const url = `3/search/movie?api_key=${userKey}&language=en-US&query=${searchQuery}&page=${page}&include_adult=false`;
 
     const response = await axios.get(url);
 
