@@ -1,3 +1,3 @@
-export const MovieCard = ({ title }) => {
+export const MovieCard = ({ title, id }) => {
   return <>{title}</>;
 };

@@ -6,7 +6,7 @@ import { MovieList } from 'components/MovieList/MovieList';
 
 export const Movie = () => {
   const [searchParams, setSearchParams] = useSearchParams();
-  const q = searchParams.get('q') ?? '';
+  const q = searchParams.get('query') ?? '';
   const [moviesCollection, setmoviesCollection] = useState([]);
 
   useEffect(() => {
@@ -14,11 +14,13 @@ export const Movie = () => {
       getSearchMovies(q).then(data => setmoviesCollection(data.results));
     }
   }, [q]);
-
-  console.log(searchParams);
+  const updateQueryString = query => {
+    const nextParams = query !== '' ? { query } : {};
+    setSearchParams(nextParams);
+  };
   return (
     <div>
-      <Searchbar value={q} onSubmit={q => setSearchParams(q)} />
+      <Searchbar onSubmit={q => updateQueryString(q)} />
       <MovieList collection={moviesCollection} />
       <Outlet />
     </div>

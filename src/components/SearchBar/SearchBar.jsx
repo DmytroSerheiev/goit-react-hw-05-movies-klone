@@ -5,7 +5,7 @@ import { Formik } from 'formik';
 const initialValues = {
   query: '',
 };
-export const Searchbar = ({ value, onSubmit }) => {
+export const Searchbar = ({ onSubmit }) => {
   const handleSubmit = (value, { resetForm }) => {
     if (value.query.trim() === '') {
       return;
