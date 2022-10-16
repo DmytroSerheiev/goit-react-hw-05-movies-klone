@@ -10,9 +10,8 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<HeaderLayout />}>
           <Route index element={<Home />} />
-          <Route path="movie" element={<Movie />}>
-            <Route path=":movieId" element={<MovieDetails />} />
-          </Route>
+          <Route path="movie" element={<Movie />} />
+          <Route path="movie/:movieId" element={<MovieDetails />}></Route>
         </Route>
       </Routes>
     </>

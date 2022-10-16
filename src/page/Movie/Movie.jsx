@@ -14,14 +14,16 @@ export const Movie = () => {
       getSearchMovies(q).then(data => setmoviesCollection(data.results));
     }
   }, [q]);
+
   const updateQueryString = query => {
     const nextParams = query !== '' ? { query } : {};
     setSearchParams(nextParams);
   };
+
   return (
     <div>
       <Searchbar onSubmit={q => updateQueryString(q)} />
-      <MovieList collection={moviesCollection} />
+      <MovieList collection={moviesCollection} query={q} />
       <Outlet />
     </div>
   );
