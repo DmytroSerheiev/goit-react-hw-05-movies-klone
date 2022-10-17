@@ -23,7 +23,7 @@ export const Movie = () => {
   return (
     <div>
       <Searchbar onSubmit={q => updateQueryString(q)} />
-      <MovieList collection={moviesCollection} query={q} />
+      <MovieList collection={moviesCollection} />
       <Outlet />
     </div>
   );

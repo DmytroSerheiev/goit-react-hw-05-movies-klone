@@ -1,11 +1,12 @@
 import { Box } from 'components/common/Box';
 import { useState, useEffect } from 'react';
-import { Outlet, useParams } from 'react-router-dom';
+import { Outlet, useParams, useLocation, Link } from 'react-router-dom';
 import { getMoviesByID } from 'service/Api';
 
 export const MovieDetails = () => {
   const [first, setfirst] = useState({});
   const { movieId } = useParams();
+  const location = useLocation();
 
   useEffect(() => {
     if (movieId) {
@@ -13,6 +14,7 @@ export const MovieDetails = () => {
     }
   }, [movieId]);
 
+  const backLinkHref = location.state?.from ?? '/movie';
   const { title, genres = [], poster_path, overview, vote_average = 1 } = first;
   console.log(title);
   const base_url = 'https://image.tmdb.org/t/p/';
@@ -21,6 +23,7 @@ export const MovieDetails = () => {
   return (
     <>
       <Box display="flex" p={4}>
+        <Link to={backLinkHref}>Back to </Link>
         <div className="modal-film__img">
           <img
             src={`${base_url}${size}${poster_path}`}
