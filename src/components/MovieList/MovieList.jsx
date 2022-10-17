@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 
 export const MovieList = ({ collection }) => {
   const location = useLocation();
-  console.log(location.pathname);
   const prevURL = location.pathname === '/' ? '/movie/' : '';
   return (
     <>
