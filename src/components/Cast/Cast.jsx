@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCastByID } from 'service/Api';
 
-export const Cast = () => {
+const Cast = () => {
   const [cast, setCast] = useState([]);
   const { movieId } = useParams();
 
@@ -20,8 +20,8 @@ export const Cast = () => {
   return (
     <div>
       <ul>
-        {cast.map(({ profile_path, name }) => (
-          <li>
+        {cast.map(({ profile_path, name, id }) => (
+          <li key={id}>
             <img
               src={`${base_url}${size}${profile_path}`}
               alt={name}
@@ -34,3 +34,5 @@ export const Cast = () => {
     </div>
   );
 };
+
+export default Cast;

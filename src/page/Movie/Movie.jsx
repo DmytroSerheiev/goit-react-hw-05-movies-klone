@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { getSearchMovies } from 'service/Api';
 import { MovieList } from 'components/MovieList/MovieList';
 
-export const Movie = () => {
+const Movie = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const q = searchParams.get('query') ?? '';
   const [moviesCollection, setmoviesCollection] = useState([]);
@@ -28,3 +28,4 @@ export const Movie = () => {
     </div>
   );
 };
+export default Movie;

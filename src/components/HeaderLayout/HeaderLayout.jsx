@@ -1,11 +1,14 @@
 import { Appbar } from 'components/Appbar/Appbar';
 import { Outlet } from 'react-router-dom';
+import { Suspense } from 'react';
 
 export const HeaderLayout = () => {
   return (
     <>
       <Appbar />
-      <Outlet />
+      <Suspense fallback={<div>Loading...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
