@@ -33,7 +33,7 @@ const MovieDetails = () => {
       <Box display="flex" p={4}>
         <div className="modal-film__img">
           <img
-            src={`${base_url}${size}${poster_path}`}
+            src={poster_path && `${base_url}${size}${poster_path}`}
             alt={title}
             className="modal-film__poster"
             loading="lazy"
