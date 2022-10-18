@@ -10,6 +10,7 @@ export const SearchForm = styled(Form)`
   border-radius: 3px;
   overflow: hidden;
   border: 1px solid #000;
+  margin: 0 auto;
 `;
 
 export const InputText = styled(Field)`

@@ -4,7 +4,7 @@ export const theme = {
     background: '#fff',
     primary: 'rgb(231, 231, 231)',
     secondary: '#919191',
-    accent: '#609',
+    accent: 'orange',
     muted: '#d2d5f0',
   },
   space: [0, 4, 8, 16, 32, 64, 128, 256],
@@ -25,7 +25,7 @@ export const theme = {
   },
   fontWeights: {
     body: 400,
-    heading: 700,
+    heading: 500,
     bold: 700,
   },
   lineHeights: {
@@ -34,7 +34,7 @@ export const theme = {
   },
   radii: {
     none: '0',
-    normal: '10px',
+    normal: '4px',
     round: '50%',
   },
 };

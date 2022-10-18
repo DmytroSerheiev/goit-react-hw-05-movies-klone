@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const Link = styled(NavLink)`
   text-decoration: none;
   color: black;
-  font-weight: 500;
+  font-weight: ${p => p.theme.fontWeights.heading};
 
   &.active {
     color: white;
@@ -14,16 +14,15 @@ export const Link = styled(NavLink)`
 
 export const List = styled.ul`
   display: grid;
-  max-width: 280px;
+  max-width: 960px;
+  grid-gap: 32px 16px;
   justify-content: center;
   grid-auto-rows: auto;
-  padding-top: 20px;
-  padding-bottom: 40px;
+  padding-top: ${p => p.theme.space[3]};
+  padding-bottom: ${p => p.theme.space[4]};
   margin-left: auto;
   margin-right: auto;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 32px 16px;
-  max-width: 1200px;
 `;
 
 export const MovieBoxCard = styled.li`
@@ -31,6 +30,7 @@ export const MovieBoxCard = styled.li`
   flex-direction: column;
   // align-items: center;
   border-radius: 6px;
+  border: 1px solid #000;
   transition: transform 400ms cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 600ms cubic-bezier(0.4, 0, 0.2, 1);
 

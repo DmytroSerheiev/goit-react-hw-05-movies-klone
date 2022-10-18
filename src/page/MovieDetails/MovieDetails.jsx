@@ -2,6 +2,7 @@ import { Box } from 'components/common/Box';
 import { useState, useEffect } from 'react';
 import { Outlet, useParams, useLocation, Link } from 'react-router-dom';
 import { getMoviesByID } from 'service/Api';
+import { Container } from './MovieDetails.styled';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState({});
@@ -28,7 +29,7 @@ const MovieDetails = () => {
   const genresList = genres.map(genre => genre.name).join(', ');
   const releaseYear = release_date.split('-').slice(0, 1).join('');
   return (
-    <>
+    <Container>
       <Link to={backLinkHref}>Back to </Link>
       <Box display="flex" p={4}>
         <div className="modal-film__img">
@@ -60,7 +61,7 @@ const MovieDetails = () => {
         </li>
       </ul>
       <Outlet />
-    </>
+    </Container>
   );
 };
 export default MovieDetails;

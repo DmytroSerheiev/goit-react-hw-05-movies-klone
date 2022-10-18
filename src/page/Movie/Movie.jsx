@@ -3,6 +3,7 @@ import { Outlet, useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { getSearchMovies } from 'service/Api';
 import { MovieList } from 'components/MovieList/MovieList';
+import { Container } from './Movie.styled';
 
 const Movie = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -21,11 +22,11 @@ const Movie = () => {
   };
 
   return (
-    <div>
+    <Container>
       <Searchbar onSubmit={q => updateQueryString(q)} />
       <MovieList collection={moviesCollection} />
       <Outlet />
-    </div>
+    </Container>
   );
 };
 export default Movie;

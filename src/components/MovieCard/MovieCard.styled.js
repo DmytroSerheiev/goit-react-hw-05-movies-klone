@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Poster = styled.img`
-  width: 100%;
-  height: 474px;
+  width: 395px;
+  height: 535px;
   object-fit: cover;
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
