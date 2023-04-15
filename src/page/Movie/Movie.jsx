@@ -24,6 +24,7 @@ const Movie = () => {
   return (
     <Container>
       <Searchbar onSubmit={q => updateQueryString(q)} />
+
       <MovieList collection={moviesCollection} />
       <Outlet />
     </Container>
